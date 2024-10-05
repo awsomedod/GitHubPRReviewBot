@@ -32,8 +32,9 @@ class GitHubClient:
         """
         # Retrieve GitHub App credentials from environment variables
         self.app_id = os.environ.get('GITHUB_APP_ID')
-        self.private_key_path = os.environ.get('GITHUB_PRIVATE_KEY_PATH')
-        self.private_key = self._load_private_key()
+        # self.private_key_path = os.environ.get('GITHUB_PRIVATE_KEY_PATH')
+        # self.private_key = self._load_private_key()
+        self.private_key = os.environ.get('GITHUB_PRIVATE_KEY')
         
         # Validate that necessary credentials are present
         if not self.app_id or not self.private_key:

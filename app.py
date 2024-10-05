@@ -110,10 +110,15 @@ def webhook():
 
     return jsonify({'status': 'review posted'}), 200
 
+
+@app.route('/')
+def home():
+    return "Hello!"
+
 if __name__ == '__main__':
     """
     Entry point of the Flask application.
     Runs the app on the specified PORT or defaults to 5000.
     """
     PORT = int(os.environ.get('PORT', 5000))
-    app.run(debug=True, port=PORT)
+    app.run(host='0.0.0.0', port=PORT)
